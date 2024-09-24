@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 const contentSchema = mongoose.Schema(
   {
-    createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
     title: {
       type: String,
       required: true,
@@ -13,6 +9,10 @@ const contentSchema = mongoose.Schema(
     description: {
       type: String,
       required: true,
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   {
